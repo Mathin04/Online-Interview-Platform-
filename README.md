@@ -33,7 +33,7 @@ It helps users prepare for interviews in topics like "Java, Python, AI, and Data
  
 [index Page]()
 ![Courses Page](images/courses.jpg)
-[resume Q&A]
+[resume Q&A](images/resume.jpg)
 [feedback]
 [login]
 
