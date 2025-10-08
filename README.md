@@ -1,6 +1,6 @@
  ONLINE INTERVIEW PLATFORM - (M-Terview) |
 
-[Live Demo](https://Mathin04.github.io/Online-Interview-Platform-/)
+[Live Demo]( https://mathin04.github.io/Online-Interview-Platform-/)
 
 
  PURPOSE:
@@ -32,7 +32,7 @@ It helps users prepare for interviews in topics like "Java, Python, AI, and Data
  ScCREENSHOTS:
  
 [index Page]()
-![Courses Page](images/java.jpg) 
+![Courses Page](images/courses.png) 
 [resume Q&A]
 [feedback]
 [login]
@@ -42,13 +42,12 @@ It helps users prepare for interviews in topics like "Java, Python, AI, and Data
 
 Mathin Shaik  
 - GitHub: [https://github.com/Mathin04](https://github.com/Mathin04)  
-- LinkedIn: [Your LinkedIn URL]  
+- LinkedIn: https://www.linkedin.com/in/mathin-shaik-9ab843300/ 
 - Email: mathinshaik2005@gmail.com  
 
----
 
  LIVE SITE:
 
-[https://Mathin04.github.io/Online-Interview-Platform-/](https://Mathin04.github.io/Online-Interview-Platform-/)
+[https://Mathin04.github.io/Online-Interview-Platform-/]( https://mathin04.github.io/Online-Interview-Platform-/)
 
 
