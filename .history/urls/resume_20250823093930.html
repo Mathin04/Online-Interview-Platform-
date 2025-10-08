@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Q&A | M-Terview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+    }
+
+    header {
+      padding: 20px;
+      background: #0077b6;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #023e8a;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #0077b6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #023e8a;
+      margin-bottom: 20px;
+    }
+
+    .upload-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .upload-section input[type="file"] {
+      display: none;
+    }
+
+    .upload-label {
+      background: #0077b6;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .upload-label:hover {
+      background: #023e8a;
+    }
+
+    .qa-section {
+      margin-top: 20px;
+    }
+
+    .qa-card {
+      background: #f8f9fa;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border-left: 5px solid #0077b6;
+    }
+
+    .qa-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #0077b6;
+    }
+
+    .qa-card p {
+      margin: 0;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .note {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Resume Q&A</h1>
+</header>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="logical.html">Logical</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="login.html">Login</a>
+</nav>
+
+<div class="container">
+  <h2>Upload Your Resume</h2>
+  <div class="upload-section">
+    <input type="file" id="resumeUpload" accept=".pdf,.doc,.docx">
+    <label for="resumeUpload" class="upload-label">📂 Upload Resume</label>
+    <p id="fileName" style="margin-top:10px; color:#555;"></p>
+  </div>
+
+  <h2>Sample Q&A Based on Resume</h2>
+  <div class="qa-section">
+    <div class="qa-card">
+      <h3>Q: Tell me about your project experience?</h3>
+      <p>A: In my B.Tech, I developed a Social Networking App using React, Spring Boot, and MySQL...</p>
+    </div>
+    <div class="qa-card">
+      <h3>Q: What programming languages are you confident in?</h3>
+      <p>A: I am proficient in Java and Python, with strong problem-solving skills in DSA.</p>
+    </div>
+    <div class="qa-card">
+      <h3>Q: Why should we hire you?</h3>
+      <p>A: I have a strong foundation in full-stack development, problem-solving ability, and eagerness to learn.</p>
+    </div>
+  </div>
+
+  <p class="note">⚡ Soon, this page will analyze your uploaded resume and generate personalized Q&A automatically.</p>
+</div>
+
+<script>
+  const resumeUpload = document.getElementById('resumeUpload');
+  const fileName = document.getElementById('fileName');
+
+  resumeUpload.addEventListener('change', () => {
+    if (resumeUpload.files.length > 0) {
+      fileName.textContent = "Uploaded: " + resumeUpload.files[0].name;
+    }
+  });
+</script>
+
+</body>
+</html>

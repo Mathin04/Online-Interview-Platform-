@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Q&A | M-Terview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #000;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      gap: 30px;
+    }
+
+    .upload-section {
+      flex: 1;
+      text-align: center;
+    }
+
+    h2 {
+      color: #000;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .upload-btn {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .upload-btn:hover {
+      background: #444;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .resume-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .resume-image img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .resume-image img {
+        max-width: 60%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📄 Resume Q&A</h1>
+  </header>
+
+  <div class="container">
+    <div class="resume-image">
+      <img src="../images/resume.jpg" alt="Resume Image">
+    </div>
+    <div class="upload-section">
+      <h2>Upload Your Resume</h2>
+      <p>Upload your resume and get AI-powered questions based on your profile.</p>
+      
+      <label for="resumeUpload" class="upload-btn">Upload Resume</label>
+      <input type="file" id="resumeUpload" accept=".pdf,.doc,.docx">
+
+      <p style="margin-top: 20px;">Supported formats: <b>PDF, DOC, DOCX</b></p>
+      <p id="fileName" style="color:#555;"></p>
+    </div>
+  </div>
+
+  <script>
+    const resumeUpload = document.getElementById('resumeUpload');
+    const fileName = document.getElementById('fileName');
+
+    resumeUpload.addEventListener('change', () => {
+      if (resumeUpload.files.length > 0) {
+        fileName.textContent = "Uploaded: " + resumeUpload.files[0].name;
+      }
+    });
+  </script>
+</body>
+</html>

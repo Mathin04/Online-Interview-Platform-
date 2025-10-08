@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logical Questions | M-Terview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+    }
+
+    header {
+      padding: 20px;
+      background: #0077b6;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #023e8a;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #0077b6;
+    }
+
+    .logical-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 50px 20px;
+      gap: 30px;
+    }
+
+    .logical-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 260px;
+      text-align: center;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .logical-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .logical-card img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    .logical-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #023e8a;
+    }
+
+    .logical-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .start-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .start-btn:hover {
+      background: #023e8a;
+    }
+
+    @media screen and (max-width: 768px) {
+      .logical-container { flex-direction: column; align-items: center; }
+      .logical-card { width: 80%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Logical Reasoning</h1>
+</header>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="resume.html">Resume Q&A</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="login.html">Login</a>
+</nav>
+
+<div class="logical-container">
+  <div class="logical-card">
+    <img src="../images/puzzle.png" alt="Puzzles">
+    <h3>Puzzles</h3>
+    <p>Test your brain with tricky logical puzzles and riddles.</p>
+    <a href="puzzles.html" class="start-btn">Start Solving</a>
+  </div>
+
+  <div class="logical-card">
+    <img src="../images/seating.png" alt="Seating">
+    <h3>Seating Arrangements</h3>
+    <p>Practice linear and circular seating arrangement problems.</p>
+    <a href="seating.html" class="start-btn">Start Solving</a>
+  </div>
+
+  <div class="logical-card">
+    <img src="../images/syllogism.png" alt="Syllogisms">
+    <h3>Syllogisms</h3>
+    <p>Work on statement & conclusion-based reasoning.</p>
+    <a href="syllogisms.html" class="start-btn">Start Solving</a>
+  </div>
+
+  <div class="logical-card">
+    <img src="../images/coding.png" alt="Coding-Decoding">
+    <h3>Coding-Decoding</h3>
+    <p>Decode patterns and find the hidden logic behind codes.</p>
+    <a href="coding.html" class="start-btn">Start Solving</a>
+  </div>
+</div>
+
+</body>
+</html>

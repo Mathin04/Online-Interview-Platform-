@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | M-Terview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      width: 360px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 30px;
+      color: #023e8a;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .divider:not(:empty)::before {
+      margin-right: .5em;
+    }
+
+    .divider:not(:empty)::after {
+      margin-left: .5em;
+    }
+
+    .social-login {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 30px;
+      margin-top: 20px;
+    }
+
+    .social-login a {
+      text-decoration: none;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .social-login a:hover {
+      color: #0077b6;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .login-container a.register-link {
+      display: block;
+      margin-top: 15px;
+      color: #0077b6;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .login-container a.register-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <h2>M-Terview Login</h2>
+
+  <input type="text" id="userInput" placeholder="Email or Mobile">
+  <input type="password" id="password" placeholder="Password">
+  <button class="login-btn" onclick="login()">Login</button>
+
+  <div class="error" id="errorMsg"></div>
+
+  <div class="divider">OR</div>
+
+  <div class="social-login">
+    <a href="https://accounts.google.com/" target="_blank" title="Continue with Google"><i class="fab fa-google"></i></a>
+    <a href="#" title="Continue with Phone"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://github.com/login" target="_blank" title="Continue with GitHub"><i class="fab fa-github"></i></a>
+  </div>
+
+  <!-- Link to register page inside pages folder -->
+  <a href="pages/register.html" class="register-link">Don't have an account? Register</a>
+</div>
+
+<script>
+  const demoUsers = [
+    { user: "test@gmail.com", password: "123456" },
+    { user: "9876543210", password: "abcdef" }
+  ];
+
+  function login() {
+    const input = document.getElementById("userInput").value;
+    const password = document.getElementById("password").value;
+    const errorMsg = document.getElementById("errorMsg");
+
+    const user = demoUsers.find(u => u.user === input && u.password === password);
+
+    if(user) {
+      errorMsg.textContent = "";
+      alert("Login successful! Redirecting...");
+      window.location.href = "index.html";
+    } else {
+      errorMsg.textContent = "Invalid Email/Mobile or Password!";
+    }
+  }
+</script>
+
+</body>
+</html>

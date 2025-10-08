@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logical Questions | M-Terview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+    }
+
+    header {
+      padding: 20px;
+      background: #0077b6;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #023e8a;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #0077b6;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question h3 {
+      margin-bottom: 10px;
+      color: #023e8a;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0;
+      padding: 10px;
+      background: #f8f9fa;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    label:hover {
+      background: #e6f2ff;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 25px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #023e8a;
+    }
+
+    .result {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #0077b6;
+    }
+
+    @media screen and (max-width: 600px) {
+      .quiz-container {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Logical Questions</h1>
+</header>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="resume.html">Resume Q&A</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="login.html">Login</a>
+</nav>
+
+<div class="quiz-container" id="quiz">
+  <!-- Question 1 -->
+  <div class="question">
+    <h3>1. A is B’s mother’s brother’s son. How is A related to B?</h3>
+    <label><input type="radio" name="q1" value="a"> Cousin</label>
+    <label><input type="radio" name="q1" value="b"> Brother</label>
+    <label><input type="radio" name="q1" value="c"> Uncle</label>
+    <label><input type="radio" name="q1" value="d"> Nephew</label>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question">
+    <h3>2. If CAT = DBU, then DOG = ?</h3>
+    <label><input type="radio" name="q2" value="a"> EPH</label>
+    <label><input type="radio" name="q2" value="b"> EOH</label>
+    <label><input type="radio" name="q2" value="c"> DPH</label>
+    <label><input type="radio" name="q2" value="d"> FPH</label>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question">
+    <h3>3. Find the odd one: 2, 3, 5, 7, 11, 14</h3>
+    <label><input type="radio" name="q3" value="a"> 3</label>
+    <label><input type="radio" name="q3" value="b"> 7</label>
+    <label><input type="radio" name="q3" value="c"> 14</label>
+    <label><input type="radio" name="q3" value="d"> 11</label>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="question">
+    <h3>4. Statements: All cats are animals. Some animals are dogs. → Conclusions?</h3>
+    <label><input type="radio" name="q4" value="a"> All cats are dogs</label>
+    <label><input type="radio" name="q4" value="b"> Some animals are cats</label>
+    <label><input type="radio" name="q4" value="c"> No cats are dogs</label>
+    <label><input type="radio" name="q4" value="d"> Some dogs are cats</label>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question">
+    <h3>5. A man walks 5 km north, then 3 km east. Which direction is he from the start?</h3>
+    <label><input type="radio" name="q5" value="a"> North-East</label>
+    <label><input type="radio" name="q5" value="b"> South-East</label>
+    <label><input type="radio" name="q5" value="c"> North-West</label>
+    <label><input type="radio" name="q5" value="d"> South-West</label>
+  </div>
+
+  <button onclick="submitQuiz()">Submit Answers</button>
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  function submitQuiz() {
+    let score = 0;
+    let total = 5;
+
+    let answers = {
+      q1: "a", // Cousin
+      q2: "a", // EPH
+      q3: "c", // 14
+      q4: "b", // Some animals are cats
+      q5: "a"  // North-East
+    };
+
+    for (let q in answers) {
+      let radios = document.getElementsByName(q);
+      for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked && radios[i].value === answers[q]) {
+          score++;
+        }
+      }
+    }
+
+    document.getElementById("result").innerHTML = 
+      `You scored ${score} out of ${total}`;
+  }
+</script>
+
+</body>
+</html>

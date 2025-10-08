@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M-Terview | Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Full background image */
+    body {
+      background: url('images/home.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation at top */
+    nav {
+      width: 100%;
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.4);
+      position: fixed;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: 0.3s;
+      color: #000;
+      background: rgba(255,255,255,0.6);
+    }
+
+    nav a:hover {
+      background: rgba(255,107,107,0.8);
+      color: white;
+    }
+
+    /* Hero section */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      padding: 150px 20px 50px;
+    }
+
+    /* Title */
+    .hero h1 {
+      font-size: 3em;
+      font-weight: 900;
+      color: #000; /* black title */
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
+    }
+
+    /* Attractive matter */
+    .hero p {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #000; /* black text */
+      max-width: 700px;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.5);
+    }
+
+    .hero .highlight {
+      color: #ff6b6b;
+      font-weight: bold;
+    }
+
+    .start-btn {
+  background: #000;   /* black background */
+  color: #fff;        /* white text */
+  padding: 18px 45px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  background: #333;   /* slightly lighter black on hover */
+}
+
+    /* Responsive text */
+    @media screen and (max-width: 768px) {
+      .hero h1 { font-size: 2.5em; }
+      .hero p { font-size: 1.2em; }
+      .start-btn { padding: 14px 35px; font-size: 16px; }
+      nav a { font-size: 14px; margin: 0 10px; padding: 6px 12px; }
+    }
+
+    @media screen and (max-width: 480px) {
+      .hero h1 { font-size: 2em; }
+      .hero p { font-size: 1em; }
+      .start-btn { padding: 12px 25px; font-size: 14px; }
+      nav { flex-direction: row; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="urls/courses.html">Courses</a>
+    <a href="urls/resume.html">Resume Q&A</a>
+    <a href="urls/logical.html">Logical</a>
+    <a href="urls/feedback.html">Feedback</a>
+    <a href="urls/login.html">Login</a>
+  </nav>
+
+  <!-- Hero section -->
+  <div class="hero">
+    <h1> M-Terview</h1>
+    <p>Prepare for your dream job with AI . Get feedback, track your progress, and ace your interviews!</p>
+    <button class="start-btn" onclick="goToCourses()">Start Your Career</button>
+  </div>
+
+  <script>
+    function goToCourses() {
+      window.location.href = "urls/courses.html";
+    }
+  </script>
+</body>
+</html>

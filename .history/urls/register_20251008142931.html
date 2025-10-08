@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | M-Terview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .register-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      width: 400px;
+      text-align: center;
+    }
+
+    .register-container h2 {
+      margin-bottom: 30px;
+      color: #023e8a;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .register-btn:hover {
+      background: #023e8a;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .divider:not(:empty)::before {
+      margin-right: .5em;
+    }
+
+    .divider:not(:empty)::after {
+      margin-left: .5em;
+    }
+
+    .social-register {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 30px;
+      margin-top: 20px;
+    }
+
+    .social-register a {
+      text-decoration: none;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .social-register a:hover {
+      color: #0077b6;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .register-container a.login-link {
+      display: block;
+      margin-top: 15px;
+      color: #0077b6;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .register-container a.login-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="register-container">
+  <h2>Create Account</h2>
+
+  <input type="text" id="firstName" placeholder="First Name">
+  <input type="text" id="lastName" placeholder="Last Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="tel" id="mobile" placeholder="Mobile">
+  <input type="password" id="password" placeholder="Password">
+  <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+  <button class="register-btn" onclick="register()">Register</button>
+
+  <div class="error" id="errorMsg"></div>
+
+  <div class="divider">OR</div>
+
+  <div class="social-register">
+    <a href="https://accounts.google.com/" target="_blank" title="Register with Google"><i class="fab fa-google"></i></a>
+    <a href="#" title="Register with Phone"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://github.com/join" target="_blank" title="Register with GitHub"><i class="fab fa-github"></i></a>
+  </div>
+
+  <a href="../login.html" class="login-link">Already have an account? Login</a>
+</div>
+
+<script>
+  function register() {
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const errorMsg = document.getElementById("errorMsg");
+
+    if(!firstName || !lastName || !email || !mobile || !password || !confirmPassword) {
+      errorMsg.textContent = "Please fill all fields!";
+      return;
+    }
+
+    if(password !== confirmPassword) {
+      errorMsg.textContent = "Passwords do not match!";
+      return;
+    }
+
+    errorMsg.textContent = "";
+    alert(`Account created successfully for ${firstName} ${lastName}! Redirecting to login...`);
+    window.location.href = "../login.html";
+  }
+</script>
+
+</body>
+</html>

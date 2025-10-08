@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courses | M-Terview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+    }
+
+    header {
+      padding: 20px;
+      background: #060606;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #050505;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #050505;
+    }
+
+    .courses-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 50px 20px;
+      gap: 30px;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .course-card img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    .course-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .course-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .start-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #0a0a0a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .start-btn:hover {
+      background: #070707;
+    }
+
+    @media screen and (max-width: 768px) {
+      .courses-container { flex-direction: column; align-items: center; }
+      .course-card { width: 80%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Courses</h1>
+</header>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="resume.html">Resume Q&A</a>
+  <a href="logical.html">Logical</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="login.html">Login</a>
+</nav>
+
+<div class="courses-container">
+  <div class="course-card">
+    <img src="images/java.jpg" alt="Java">
+    <h3>Java Programming</h3>
+    <p>Learn the basics of Java programming for interviews and projects.</p>
+    <a href="interview.html" class="start-btn">Start Interview</a>
+  </div>
+
+  <div class="course-card">
+    <img src="images/python.jpg" alt="Python">
+    <h3>Python Programming</h3>
+    <p>Master Python coding for data analysis, AI, and web development.</p>
+    <a href="interview.html" class="start-btn">Start Interview</a>
+  </div>
+
+  <div class="course-card">
+    <img src="images/ai.jpg" alt="AI">
+    <h3>Artificial Intelligence</h3>
+    <p>Explore AI concepts and prepare for AI-related interview rounds.</p>
+    <a href="interview.html" class="start-btn">Start Interview</a>
+  </div>
+
+  <div class="course-card">
+    <img src="images/DataScience.jpg" alt="Data Science">
+    <h3>Data Science</h3>
+    <p>Learn data analysis, machine learning, and visualization techniques.</p>
+    <a href="interview.html" class="start-btn">Start Interview</a>
+  </div>
+
+</div>
+
+</body>
+</html>

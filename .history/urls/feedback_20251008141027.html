@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback | M-Terview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+    }
+
+    header {
+      padding: 20px;
+      background: #060606;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #040404;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #0b0b0b;
+    }
+
+    .feedback-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #070707;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .score {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .percentage {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #040404;
+    }
+
+    .mistakes, .suggestions {
+      margin-top: 20px;
+    }
+
+    .mistakes h3, .suggestions h3 {
+      margin-bottom: 10px;
+      color: #ff4b5c;
+    }
+
+    .mistakes ul, .suggestions ul {
+      list-style: disc;
+      padding-left: 20px;
+      color: #555;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 25px;
+      background: #060606;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #080808;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Interview Feedback</h1>
+</header>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="logical.html">Logical</a>
+  <a href="resume.html">Resume Q&A</a>
+  <a href="login.html">Login</a>
+</nav>
+
+<div class="feedback-container" id="feedback">
+  <h2 id="interviewTypeTitle">Your Interview Feedback</h2>
+
+  <div class="score" id="score">Score: 0 / 0</div>
+  <div class="percentage" id="percentage">Accuracy: 0%</div>
+
+  <div class="mistakes" id="mistakes">
+    <h3>Mistakes:</h3>
+    <ul></ul>
+  </div>
+
+  <div class="suggestions" id="suggestions">
+    <h3>Suggestions for Improvement:</h3>
+    <ul></ul>
+  </div>
+
+  <button id="retakeBtn">Retake Interview</button>
+</div>
+
+<script>
+  // Sample interview data for demonstration
+  const interviews = {
+    logical: {
+      totalQuestions: 5,
+      correctAnswers: 3,
+      wrongAnswers: [
+        { question: "Q2. If CAT = DBU, then DOG = ?", yourAnswer: "EOH", correctAnswer: "EPH", suggestion: "Check alphabetical shift logic." },
+        { question: "Q5. Direction question", yourAnswer: "South-East", correctAnswer: "North-East", suggestion: "Draw step by step directions." }
+      ]
+    },
+    resume: {
+      totalQuestions: 4,
+      correctAnswers: 2,
+      wrongAnswers: [
+        { question: "Resume Q1", yourAnswer: "Incorrect format", correctAnswer: "Proper format", suggestion: "Use bullet points and correct tense." },
+        { question: "Resume Q2", yourAnswer: "Missed skill", correctAnswer: "Include skill", suggestion: "Always list relevant skills." }
+      ]
+    },
+    courses: {
+      totalQuestions: 3,
+      correctAnswers: 2,
+      wrongAnswers: [
+        { question: "Course Q1", yourAnswer: "Wrong concept", correctAnswer: "Correct concept", suggestion: "Review basics again." }
+      ]
+    }
+  };
+
+  // Get interview type from URL ?type=logical/resume/courses
+  const urlParams = new URLSearchParams(window.location.search);
+  const interviewType = urlParams.get('type') || 'logical'; // default to logical
+
+  // Set title dynamically
+  document.getElementById("interviewTypeTitle").textContent = `${interviewType.charAt(0).toUpperCase() + interviewType.slice(1)} Interview Feedback`;
+
+  // Get relevant data
+  const data = interviews[interviewType];
+
+  // Display feedback
+  const scoreElem = document.getElementById("score");
+  const percentageElem = document.getElementById("percentage");
+  const mistakesList = document.getElementById("mistakes").querySelector("ul");
+  const suggestionsList = document.getElementById("suggestions").querySelector("ul");
+
+  const score = data.correctAnswers;
+  const total = data.totalQuestions;
+  const accuracy = ((score / total) * 100).toFixed(2);
+
+  scoreElem.textContent = `Score: ${score} / ${total}`;
+  percentageElem.textContent = `Accuracy: ${accuracy}%`;
+
+  data.wrongAnswers.forEach(item => {
+    const liMistake = document.createElement("li");
+    liMistake.textContent = `${item.question} | Your Answer: ${item.yourAnswer} | Correct Answer: ${item.correctAnswer}`;
+    mistakesList.appendChild(liMistake);
+
+    const liSuggestion = document.createElement("li");
+    liSuggestion.textContent = item.suggestion;
+    suggestionsList.appendChild(liSuggestion);
+  });
+
+  // Retake button redirects to the same interview
+  document.getElementById("retakeBtn").onclick = () => {
+    if (interviewType === 'logical') window.location.href = "logical.html";
+    else if (interviewType === 'resume') window.location.href = "resume.html";
+    else if (interviewType === 'courses') window.location.href = "courses.html";
+  };
+</script>
+
+</body>
+</html>
