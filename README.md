@@ -32,7 +32,7 @@ It helps users prepare for interviews in topics like "Java, Python, AI, and Data
  ScCREENSHOTS:
  
 [index Page]()
-![Courses Page](images/courses.png) 
+![Courses Page](images/courses.jpg)
 [resume Q&A]
 [feedback]
 [login]
